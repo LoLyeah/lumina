@@ -111,14 +111,20 @@ export default function LandmarkOverlay({ info, onClose }: LandmarkOverlayProps)
            </p>
 
            {/* Fun Fact */}
-           <div className="bg-white/5 rounded-2xl p-6 border border-white/10 relative overflow-hidden group">
-             <div className="absolute top-0 right-0 p-4 text-white/10 group-hover:scale-125 transition-transform">
+           <div className="bg-white/5 rounded-2xl p-6 border border-white/10 relative overflow-hidden group hover:border-[var(--color-accent)]/30 hover:bg-white/10 transition-all duration-500">
+             <motion.div 
+               className="absolute top-0 right-0 p-4 text-[var(--color-accent)] cursor-default"
+               initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
+               animate={{ opacity: 0.3, scale: 1, rotate: 0 }}
+               whileHover={{ opacity: 0.8, scale: 1.2, rotate: 15 }}
+               transition={{ duration: 0.5 }}
+             >
                <Sparkles size={48} />
-             </div>
-             <div className="text-white/40 text-[10px] font-bold tracking-widest uppercase mb-2">
+             </motion.div>
+             <div className="text-white/40 text-[10px] font-bold tracking-widest uppercase mb-2 relative z-10">
                Did you know?
              </div>
-             <p className="text-white font-medium text-lg italic">
+             <p className="text-white font-medium text-lg italic relative z-10">
                "{info.funFact}"
              </p>
            </div>
