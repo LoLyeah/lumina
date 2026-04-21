@@ -43,12 +43,12 @@ export default function CameraView({ onCapture, isLoading }: CameraViewProps) {
 
       {/* AR Sighting Frame */}
       <div className="absolute inset-0 border-[60px] border-black/40 pointer-events-none">
-        <div className="h-full w-full border border-white/20 relative">
+        <div className="h-full w-full relative">
           {/* Corner Elements */}
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white/60" />
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white/60" />
-          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white/60" />
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white/60" />
+          <div className="absolute top-0 left-0 scan-corner border-t border-l" />
+          <div className="absolute top-0 right-0 scan-corner border-t border-r" />
+          <div className="absolute bottom-0 left-0 scan-corner border-b border-l" />
+          <div className="absolute bottom-0 right-0 scan-corner border-b border-r" />
         </div>
       </div>
 
@@ -101,7 +101,7 @@ export default function CameraView({ onCapture, isLoading }: CameraViewProps) {
         <motion.div
           animate={{ top: ['10%', '90%', '10%'] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-          className="absolute left-0 right-0 h-[2px] bg-white shadow-[0_0_15px_#fff] z-20"
+          className="absolute left-[60px] right-[60px] h-[2px] bg-[var(--color-accent)] shadow-[0_0_15px_var(--color-accent)] z-20"
         />
       )}
 
