@@ -1,0 +1,12 @@
+{
+  "name": "Lumina Tourism",
+  "description": "Discover the stories behind every landmark with AI-powered photo recognition and immersive narrated clips.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "vision",
+    "search",
+    "tts"
+  ]
+}
